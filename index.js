@@ -100,11 +100,11 @@ const result3 = http.createServer((req,res)=>{
 
     if(req.method === 'GET'){
 
-        res.writeHead(200, {"Content-Type" : "text/plain"});
-
+        
         const data = req.url;
         const array = data.split('/');
-
+        
+        res.writeHead(array[2], {"Content-Type" : "text/plain"});
         res.end(array[2]);
         console.log("response sended");
 
